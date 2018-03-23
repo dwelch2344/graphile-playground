@@ -1,0 +1,14 @@
+{
+  "name": "graphile-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "startAll": "postgraphile -c 'postgres://dbadmin:changeme@localhost:5400/system' --schema 'iam,iam_private,membership,membership_private,platform,platform_private' --watch",
+    "start": "postgraphile -c 'postgres://system_postgraphile:changeme@localhost:5400/system' --default-role system_anonymous --secret hello_world --token api.jwt_token --schema api --watch",
+    "migrate": "bash src/bin/flyway.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
